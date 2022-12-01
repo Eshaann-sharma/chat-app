@@ -21,12 +21,14 @@ def handle_client(conn , addr):
     while connected:
         #recieve msg from client
         msg_lenght = conn.recv(HEADER).decode(FORMAT) 
-        msg_lenght = int(msg_lenght)
-        msg = conn.recv(msg_lenght).decode(FORMAT)
-        
-        if msg == DISCONNECT_MSG:
-            connected = False
-        print(f"[{addr}] : {msg}") 
+        if msg_lenght :
+            msg_lenght = int(msg_lenght)
+            msg = conn.recv(msg_lenght).decode(FORMAT)
+            
+            if msg == DISCONNECT_MSG:
+                connected = False
+                
+            print(f"[{addr}] : {msg}") 
     
     conn.close() #closing connection
 

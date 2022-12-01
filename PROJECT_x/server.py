@@ -39,7 +39,7 @@ def start():
         conn , addr = server.accept() #wait for new connection and info of connection
         thread = threading.Thread(target=handle_client , args=(conn , addr))
         thread.start()
-        print(f"ACTIVE CONNECTION = { threading.activeCount()-1 }")
+        print(f"ACTIVE CONNECTION = { threading.active_count()-1 }")
         
     
  

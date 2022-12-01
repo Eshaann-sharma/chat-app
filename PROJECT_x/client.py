@@ -11,6 +11,7 @@ ADDR = (SERVER , PORT)
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
 
+
 def send(msg):
     message = msg.encode(FORMAT)
     #getting lenght and making it 64
